@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="vl53l0x_driver" type="vl53l0x_publisher" name="vl53l0x_node" output="screen">
+    <param name="port" value="/dev/ttyACM0"/>
+	  <param name="frame_id" value="ir_range"/>
+  </node>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find vl53l0x_driver)/rviz/demo.rviz" required="true" />
+</launch>
