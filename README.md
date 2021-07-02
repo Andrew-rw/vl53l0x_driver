@@ -1,6 +1,6 @@
 # vl53l0x_driver
 
-#### Simle vl53l0x range sensor ROS driver.
+#### Simple vl53l0x range sensor ROS driver.
 
 Sensor measurement data is converted into simple binary protocol and is sent to the ROS node via USB connection.
 
