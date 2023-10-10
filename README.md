@@ -30,6 +30,21 @@ Every message, sent from Arduino, starts with 0xAD byte, followed by message typ
  * frame_id - tf frame ID of the sensor. Default: ir_range
  * firmware_version - reserved. Not used as for now.
 
+ ## Docker
+Build image (not necessary if able to pull from dockerhub):
+1. cd to the folder where the dockerfile is located (in this repos root folder)
+2. docker build . -t lucasmogsan/vl53l0x_driver:latest
+3. (optional) docker tag lucasmogsan/vl53l0x_driver:latest docker.io/lucasmogsan/vl53l0x_driver:latest
+4. (optional) docker push docker.io/lucasmogsan/vl53l0x_driver:latest
+
+Run image:
+1. cd to the folder where the dockerfile is located (in this repos root folder)
+2. docker run --name vl53l0x_driver --privileged --network host -e DISPLAY=host.docker.internal:0.0 -v .:/my_ws/src/vl53l0x_driver_ws -it lucasmogsan/vl53l0x_driver:latest
+3. catkin_make
+4. source devel/setup.bash
+
+
+
 ## Links
 
  * More information on the Medium page - https://medium.com/robotics-weekends/ros-node-for-vl53l0x-range-sensor-56edbe5d9172
